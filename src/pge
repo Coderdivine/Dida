@@ -1,0 +1,56 @@
+<body>
+            
+<div class="container">
+
+      <div className="homepage">
+      </div></div>
+      <div class="welcome"><h1>Welcome to Dida</h1></div>
+      </div>
+          <div div="site">
+               <p>Other</p><p>Site</p><p>About</p>
+         <br/>
+         <div class="testimonal"><div class="small-container"><div class="row"><div class="col-3">
+         <header>other</header>
+         <form onSubmit={(e)=>handleorder(e)}>
+           <input id="name" placeholder="Name" onClick={(e)=>handleOrder(e)}/>
+           <input id="email"placeholder="Email" onClick={(e)=>handleOrder(e)}/>
+           <input id="phone" placeholder="Phone"onClick={(e)=>handleOrder(e)} />
+           <select value={selected} onChange={(e)=>{
+              const selectedfood=e.target.value;
+              setSelected(selectedfood);}}>
+             <option value="Bet App">Bet App</option>
+             <option value="E-service" >E-service</option>
+             <option vaiue="E-commerece" >E-commerece</option>
+             <option value="Sponzy" >Sponzy</option>
+             <option value="Others">Others</option>
+             </select>{selected}
+           <input id="des" placeholder="Description" onClick={(e)=>handleOrder(e)}/>
+           <input id="amount" placeholder="Amount" onClick={(e)=>handleOrder(e)}/>
+           <button type="submit">Send</button>
+         </form>
+         </div></div></div></div>
+         <div class="testimonal"><div class="small-container"><div class="row"><div class="col-3">
+         {home}
+         <br/><br/>
+         <div>
+           <form onSubmit={(e)=>handlesubmit(e)}>
+             <input id="Number" type="phone" placeholder="Phone Number" onChange={(e)=>handledata(e)}/>
+             <input id="Email" type="email" placeholder="Email" onChange={(e)=>handledata(e)}/>
+          <button type="submit">Suscribe</button>
+           </form></div></div></div></div>
+           <div class="about">
+             about<th/>
+             <img src="" alt=""/>
+             <br/><br/>
+             Description<th/>
+             <div class="des">des</div>
+             <br/>
+             <div class="good">
+               Good at
+             </div>
+             </div>
+          
+     
+      
+      <Admin/></div>
+            </body>
