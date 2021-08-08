@@ -9,7 +9,7 @@ import {Axios} from './Contact';
 
 function Homepage() {
     const arr=[
-   {src:"./img/paper1.jpg",name:"DiverFood",link:""},{src:"./img/paper1.jpg",name:"Divere",link:""},{src:"./img/paper1.jpg",name:"Axgura",link:""},
+   {src:"./img/paper1.jpg",name:"DivereFood",link:""},{src:"./img/paper1.jpg",name:"Divere",link:""},{src:"./img/paper1.jpg",name:"Axgura",link:""},
    {src:"./img/paper1.jpg",name:"UberLagos",link:""},{src:"./img/paper1.jpg",name:"DidaSponzy",link:""},{src:"./img/paper1.jpg",name:"Alpha(Dcetrad)",link:""}]
    const[menu,setMenu]=useState(false);
    const [home,setHome]=useState( <div>
@@ -28,6 +28,7 @@ function Homepage() {
        setSelected(e.target.value);
    }
    const[order,setOrder]=useState([]);
+
    const[suscriber,setSuscriber]=useState([]);
   const[data,setData]=useState({});
   const[user,setUser]=useState({});
@@ -82,13 +83,14 @@ function Homepage() {
      if(name===namee){
        if(pass===passs){
          setFar(true);
+         getO()
        }
      }
    }
 
   
    return (
-        <div ><div>  {!far?<div>         
+        <div ><div> <div>{!far?<div>         
 <div class="offer">
 <div class="small-container">
   <div class="row">
@@ -97,12 +99,15 @@ function Homepage() {
   <div class="col-2">
   <i><h1>Welcome to DidaTech</h1></i>
   </div>
-  
+ 
   </div>
 
 </div>
 </div><br/>
       <div class="col-2">
+        <div class="img">
+          <img src=".img/adsdida.png" width="100px" alt="img"/>
+        </div>
      <h1>Avaiable Sites on DidaTech</h1>
      <hr id="Indi"/></div>
      {home}   
@@ -157,13 +162,40 @@ function Homepage() {
              </select>
            <input id="des" placeholder="Description" onClick={(e)=>handleOrder(e)}/>
            <input id="amount" placeholder="Amount" onClick={(e)=>handleOrder(e)}/>
+           <br/>
+           <small>Optional</small>
+           <input id="promo" placeholder="Enter Promo Code" onClick={(e)=>handleOrder(e)}/>
            <small><i>Please make sure you don't use auto fill to prevent loss of data</i></small>
 
            <button type="submit" class="btn">Send</button>
          </form>
      </div>
      </div>
-     </div></div></div>
+     </div></div>
+     
+     <div class="col-4-5"><h1>FAQ's</h1><br/>
+       <br/>
+       <h>How to Order Website form Dida ?<br/>
+Step 1: Scroll down to Order<br/>
+Step 2: Enter your name ,Phone Number ,Email ,
+Description.<br/>
+Note: We use Description for customer to Breifly explain
+what the website is used for...<br/>
+Step 3: Enter the amount you wish to put.<br/>
+Step 4: Select the type of Website you want.
+ Note: Do not use auto fill to fill this form
+to prevent loss of data.<br/>
+<br/>
+Why Should you Suscribe ?<br/>
+  The reason why Didatech<br/> made it possible for customer to suscribe
+is to ensure that customers get updataed <br/>with the latest information on Didatech.<br/>
+Have not seen my orders ?
+Dida team takes 20-30mins to scan<br/>
+your orders if verified to the terms and conditions,
+Dida would send a  message to your gmail ,else<br/>
+ dida would also send a message why your order was invaild.
+</h></div>
+     </div>
      
      <br/>
 </div>
@@ -175,13 +207,13 @@ function Homepage() {
 <h3>Download our App</h3>
 <p>Download App for Android mobile phone.</p>
 <div className="app-logo">
-<a href=""><img src="" alt=""/></a>
+<a href="http://localhost:3000/Dida"><img src="" alt="" width="100px" height="100px" /></a>
 
 </div>
 </div>
 <div className="footer-col-2">
-<img src="" width="100px" height="100px"  />
-<p>Our Purpose is to Sustainably make the Pleasure and Benefits of Food Accessible to the Many</p>
+
+<p>Our Purpose is to Sustainably make the Pleasure and Benefits of Electronic Access to the Many</p>
 </div>
 <div className="footer-col-3">
 <h3>Related Site</h3>
@@ -214,7 +246,7 @@ function Homepage() {
 </div></div>
 <div></div></div>
  
- 
+ </div>
         </div>
     )
 }

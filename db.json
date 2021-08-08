@@ -1,61 +1,19 @@
 {
-  "suscribers": [
+  "posts": [
     {
       "id": 1,
-      "phone": "86969696050",
-      "email": "chimdindu@gmail.com"
-    },
-    {
-      "Number": "978756457",
-      "Email": "chimdindu4332@gmail.com",
-      "id": 3
-    },
-    {
-      "Number": "08038383680",
-      "Email": "dabere@gmail.com",
-      "id": 4
+      "title": "json-server",
+      "author": "typicode"
     }
   ],
-  "orders": [
+  "comments": [
     {
       "id": 1,
-      "select": "selected",
-      "data": [
-        {
-          "name": "name",
-          "email": "chimdi@gmail.com",
-          "phone": "86969696050",
-          "des": "dscription",
-          "amount": 2000
-        },
-        {
-          "name": "name here",
-          "email": "chimdindu@gmail.com",
-          "phone": "86969396050",
-          "des": "dscription",
-          "amount": 2000
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "select": "selecting",
-      "data": [
-        {
-          "name": "name here",
-          "email": "chimdi@gmail.com",
-          "phone": "86969696050",
-          "des": "dscription",
-          "amount": 2000
-        },
-        {
-          "name": "name ",
-          "email": "chimdindu@gmail.com",
-          "phone": "86969396050",
-          "des": "dscription",
-          "amount": 2000
-        }
-      ]
+      "body": "some comment",
+      "postId": 1
     }
-  ]
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }
