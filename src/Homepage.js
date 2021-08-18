@@ -135,7 +135,7 @@ const runalert=()=>{
 </div><br/>
       <div class="col-2">
        
-        <img src="./img/didag.png" width="100p%" height="100%" alt="img"/>
+        <img src="./img/didag.png" width="100%" height="100%" alt="img"/>
 
      <h1>Avaiable Sites on DidaTech</h1>
      <hr id="Indi"/></div>
