@@ -1,19 +1,19 @@
-import React,{useState} from 'react'
+import React,{useContext, useState} from 'react'
+import { create } from './Homepage';
 
-function Orders(props) {
-      const orrder=props.order;
-      const Person=props.user;
-    const orderss= orrder && orrder.map(order=><div class="order">
-    <td><small>{order.id}</small></td>
+function Orders() {
+
+  const{order,suscriber}=useContext(create);
+    const orderss= order && order.map(order=><div class="order">
     <td><small>{order.select}</small></td>
-    <td> <strong>{order.data.map(i=><div class="names"><small><td>{i.name}</td>
-    <td>{i.email}</td><td>{i.phone}</td><td>{i.des}</td>
-    <td>{i.amount}</td></small>
-    <td><strong>{i.promo}</strong></td>
-    </div>)}</strong></td>
+    <div class="names"><small><td>{order.name}</td>
+    <td>{order.email}</td><td>{order.phone}</td><td>{order.des}</td>
+    <td>{order.amount}</td></small>
+    <td><strong>{order.promo}</strong></td>
+    </div>
     </div>
     )
-    const regs= Person && Person.map(reg=><div><div class="small-container cart-page">
+    const regs= suscriber && suscriber.map(reg=><div><div class="small-container cart-page">
     <table>
     <tr>
       <td>
@@ -39,7 +39,7 @@ function Orders(props) {
       const[rr,setRr]=useState(false);
     return (
         <div>
-           <button class="btn" onClick={(e)=>setRr(false)}>OTHER</button><button class="btn" onClick={(e)=>setRr(true)}>SUSCRIBERS</button>
+           <button class="btn" onClick={(e)=>setRr(false)}>OTHER</button> <button class="btn" onClick={(e)=>setRr(true)}>SUSCRIBERS</button>
            <br/>
            <br/>
            {!rr?<div class="overflow">{orderss}</div>:<div>{regs}</div>}
