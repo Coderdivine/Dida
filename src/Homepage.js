@@ -118,15 +118,18 @@ function Homepage() {
 const runalert=()=>{
   alert("Pricing is unavailable at the moment...")
 }  
+const dontshow=()=>{
+  localStorage.setItem("dey","applied");
+}  
    return (
         <div ><div> <div>{!far?<div>         
 <div class="offer">
 <div class="small-container">
   <div class="row">
     <div className="col-2">
- <h1>Welcome to Didatechnologies</h1> <br/>
- <hr/><br/><hr/><br/><hr/>
-  <i><small><a onClick={()=>runalert()}>View Pricing</a></small></i>
+ <h1>Welcome to Didatech</h1> <br/>
+ <hr/><hr/>
+  <i><small><a onClick={()=>runalert()} class="btn">View Pricing </a></small></i>
   
    </div>
   </div>
@@ -136,7 +139,7 @@ const runalert=()=>{
       <div class="col-2">
        
 
-     <h1>Avaiable Sites on DidaTech</h1>
+     <h1> Sites on DidaTech</h1>
      <hr id="Indi"/></div>
      {home}   
 
@@ -170,7 +173,6 @@ const runalert=()=>{
               const selectedfood=e.target.value;
               setSelected(selectedfood);}}>
              <option value="Bet App">Bet App</option>
-             <option value="E-service" >E-service</option>
              <option vaiue="E-commerece" >E-commerece</option>
              <option value="Sponzy" >Sponzy</option>
              <option value="Vlog">Vlog</option>
@@ -183,7 +185,14 @@ const runalert=()=>{
            <br/>
            <small>Optional</small>
            <input id="promo" placeholder="Enter Promo Code" onChange={(e)=>setPromo(e.target.value)}/>
-         <br/><i><small>Apply to the Terms and Conditions </small></i>
+         <br/>
+         {
+!localStorage.getItem("dey")?<div class="as">
+  <i><small><pre onClick={()=>dontshow()}>Apply to the Terms and Conditions </pre></small></i>
+ </div>:<div><small>Thanks for applying.</small></div>
+  
+  }
+         
            <button type="submit" class="btn">Send</button>
          </form>
      </div>
@@ -214,14 +223,13 @@ Note: We use Description for customer to Breifly explain
 what the website is used for...<br/>
 Step 3: Enter the amount you wish to put.<br/>
 Step 4: Select the type of Website you want.
- Note: Do not use auto fill to fill this form
-to prevent loss of data.<br/>
+ <br/>
 <br/>
 Why Should you Suscribe ?<br/>
-  The reason why Didatech<br/> made it possible for customer to suscribe
+  The reason why Didatech  made it possible for customer to suscribe
 is to ensure that customers get updataed <br/>with the latest information on Didatech.<br/>
-Have not seen my orders ?
-Dida team takes 20-30mins to scan<br/>
+Have not seen my orders ?<br/>
+Dida team takes 20-30mins to verify your order<br/>
 your orders if verified to the terms and conditions,
 Dida would send a  message to your gmail ,else<br/>
  dida would also send a message why your order was invaild.

@@ -20,6 +20,12 @@ justify-content: center;
   justify-content: center;
   text-decoration: line-through;
 }
+.as{
+  text-decoration: underline;
+}
+.as a{
+  color: blue;
+}
 .ave small{
   display: inline;
   color: blue;
@@ -182,9 +188,9 @@ justify-content: center;
   padding:50px 0;
   }
   .col-2 h1{
-  font-size:50px;
-  line-height:60px;
-  margin:25px 0;
+  font-size:10px;
+  line-height:50px;
+  margin:15px 0;
   }
   .site{
     display: block;
@@ -418,7 +424,28 @@ text-shadow: black;
 transform: rotate(4deg);
 overflow: hidden;
 }
+.offer .btn{
+  background: red;
+text-shadow: black;
+transform: rotate(-3deg);
+color: white;
+font-size: 17px;
 
+}
+.offer .btn:hover{
+  background: rgb(209, 209, 29);
+text-shadow: red;
+transform: rotate(0deg);
+color: white;
+font-size: 17px;
+
+}
+.offer hr{
+  background: red;
+text-shadow: black;
+transform: rotate(-3deg);
+
+}
 small{
 color:#555;
 }
