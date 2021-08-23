@@ -8,16 +8,9 @@
 justify-content: center;
   text-align:center;
 }
-.ave{
-  display: inline;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
+
 .ave a{
-  display: inline;
-  text-align: center;
-  justify-content: center;
+ 
   text-decoration: line-through;
 }
 .as{
@@ -29,7 +22,8 @@ justify-content: center;
 .ave small{
   display: inline;
   color: blue;
-  margin-right: 27px;
+  margin-left: 1px;
+  margin-right: 17px;
  cursor: pointer;
  text-align: center;
 }
@@ -666,12 +660,19 @@ text-align:right;
 th:last-child{
 text-align:right;
 }
-/*-------account-page-------
+
 
 .account-page{
+  margin-top: 50px;
 padding:50px 0;
 background:radial-gradient(#fff,#ffd8d8);
-}*/
+display: block;
+}
+.account-page h1{
+ margin-top: 7px;
+text-align: center;
+color:red;
+}
 .formcontainer{
   background:#fff;
   width:300px;

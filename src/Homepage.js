@@ -39,7 +39,10 @@ function Homepage() {
   const[data,setData]=useState({});
   const[user,setUser]=useState([]);
   const gets=async()=>{
-    const res= await Axios.get('/suscribers')
+
+    const res= await Axios.get('/employee').then((response)=>{
+     setSuscriber(response.data);
+    })
     if(res && res.data)setSuscriber(res.data);
   }
   const handledata=(e)=>{
@@ -50,9 +53,9 @@ function Homepage() {
 
    e.preventDefault();
    if(data){
-    const res= await  Axios.post("/suscribers",data)
+    const res= await  Axios.post("/created",data)
     if(res)gets();setData({});
-    alert("Thanks for suscribing to Didatechnologies ");
+    alert("Thanks for suscribing to Didatech ! ");
      
     };
    }
@@ -61,7 +64,9 @@ function Homepage() {
    gets()
   }, [])
   const getO= async()=>{
-    const res= await Axios.get("/orders")
+    const res= await Axios.get("/employeed").then((response)=>{
+      setOrder(response.data);
+    })
     if(res && res.data)setOrder(res.data);
    }
  
@@ -80,8 +85,10 @@ function Homepage() {
             promo: promo
          
             }
-            const res = await Axios.post("/orders",resq).catch((err)=>{console.log(err)});
+            const res = await Axios.post("/create",resq).catch((err)=>{console.log(err)});
              if(res)getO()
+             alert("You have successfully ordered your website we would reach you shortly");
+
              alert("Your request is being processed we would get back you within 24hours");
          }else{
            alert("phone number and type of website is must")
@@ -135,7 +142,15 @@ const dontshow=()=>{
   </div>
 
 </div>
-</div><br/>
+</div>
+
+<div className="account-page">{!localStorage.getItem("name")?<div></div>:<div><h1>
+Hello "{localStorage.getItem("name")}",am Shaw from Alpha02 your'e welcome to Didatechnology Community
+</h1>
+  </div>}
+</div>
+<hr/>
+<br/>
       <div class="col-2">
        
 
@@ -146,7 +161,7 @@ const dontshow=()=>{
  
  
   <br/>
-  <div class="account-page">
+  <div class="s">
   <div class="container">
   <div class="row">
   <div class="col-2" >
@@ -240,6 +255,10 @@ Dida would send a  message to your gmail ,else<br/>
   <i><small><a onClick={()=>runalert()}>Pricing</a></small></i>
   <i><small>Meesage</small></i>
   <i><small>Payment</small></i>
+  <i><small>About</small></i>
+  <i><small>My order</small></i>
+
+
 </div>
 </div></div>
     :<div><create.Provider value={{order,suscriber}}>
