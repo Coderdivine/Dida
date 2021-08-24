@@ -4,7 +4,7 @@ import './App.css';
 import Homepage from "./Homepage";
 import Pricing from './Pricing';
 import {
-  BrowserRouter as Router,
+  HashRouter  as Router,
   Switch,
   Route,
   Link
