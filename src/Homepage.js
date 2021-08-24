@@ -10,7 +10,8 @@ function Homepage() {
     const arr=[
    {src:"./img/paper1.jpg",name:"DivereFood",link:"https://Coderdivine.github.io/divere"}
    ]
-
+const[dataname,setDataname]=useState("");
+const[dataemail,setDataemail]=useState("");
    const [names,setNames]=useState("");
    const [email,setEmail]=useState("");
    const [phone,setPhone]=useState("");
@@ -52,10 +53,17 @@ function Homepage() {
   const handlesubmit= async(e)=>{
 
    e.preventDefault();
-   if(data){
-    const res= await  Axios.post("/created",data)
+   const dataa={
+     id:uuidv4(),
+     dataname:dataname,
+     dataemail:dataemail
+   }
+   if(dataemail!=="" && dataname!==""){
+    const res= await  Axios.post("/created",dataa).then((response)=>{
+      gets()
+    })
     if(res)gets();setData({});
-    alert("Thanks for suscribing to Didatech ! ");
+    
      
     };
    }
@@ -85,11 +93,10 @@ function Homepage() {
             promo: promo
          
             }
-            const res = await Axios.post("/create",resq).catch((err)=>{console.log(err)});
+            const res = await Axios.post("/create",resq).then((response)=>{             alert("You have successfully ordered your website we would reach you shortly"); getO()
+          })
              if(res)getO()
-             alert("You have successfully ordered your website we would reach you shortly");
-
-             alert("Your request is being processed we would get back you within 24hours");
+            
          }else{
            alert("phone number and type of website is must")
          }
@@ -221,8 +228,8 @@ Hello "{localStorage.getItem("name")}",am Shaw from Alpha02 your'e welcome to Di
 <br/>
 <br/>
   <form onSubmit={(e)=>handlesubmit(e)}>
-    <input id="Number" type="phone" placeholder="Phone Number" onChange={(e)=>handledata(e)}/>
-    <input id="Email" type="email" placeholder="Email" onChange={(e)=>handledata(e)}/><br/>
+    <input id="Number" type="phone" placeholder="Phone Number" onChange={(e)=>setDataname(e.target.value)}/>
+    <input id="Email" type="email" placeholder="Email" onChange={(e)=>setDataemail(e.target.value)}/><br/>
     <small><i>Please make sure you don't use auto fill to prevent loss of data</i></small>
  <button type="submit" class="btn">Suscribe</button>
   </form>
