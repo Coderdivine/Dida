@@ -9,22 +9,117 @@ justify-content: center;
   text-align:center;
 }
 
-.ave a{
- 
-  text-decoration: line-through;
+.ave {
+    display: inline-block;
+  text-decoration:underline;
+  justify-content: center;
+  text-align:center;
+ border-radius: 15px;
+  margin-top:7%;
+  margin-bottom: 10%;
+  padding: 10px 10px 10px 10px;
+   border: 2px solid sienna;
+   margin-left: 11px;
+   margin-right: 11px;
+
 }
+.ave ul {
+  margin: auto;
+  text-align: left;
+  border:2px solid silver;
+  margin-bottom: 9px;
+}
+.ave ul li{
+  color: red;
+  text-decoration: sienna;
+  margin-top: 4px;
+  margin-bottom: 6px;
+
+}
+.ave h1{
+  color: red;
+  margin-top: 4px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 6px;
+  text-decoration: none;
+
+}
+.class{
+  border: 1px solid darksalmon;
+  border-radius: 18px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+.about{
+  justify-content: center;
+  text-align: center;
+ margin-top: 36%;
+ color: sienna; 
+ margin-bottom: 16px;
+}
+.about small{
+  justify-content: center;
+  text-align: center;
+ color: sienna; 
+ 
+}
+.about img{
+  justify-content: center;
+  text-align: center;
+  color: sienna; 
+  border: 2px solid sienna;
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
+}
+header{
+  text-align: center;
+  color: sienna;
+  font-size: x-large;
+  background-color: whitesmoke;
+  border-radius: 3px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  margin-left: 18px;
+  margin-right: 18px;
+}
+.ave del{
+  color: burlywood;
+  text-decoration: line-through;
+  margin-top: 4px;
+  margin-bottom: 6px;
+
+}
+.ave strong{
+  color: sienna;
+  text-decoration: silver;
+  margin-top: 4px;
+  margin-bottom: 6px;
+
+}
+
+
 .as{
   text-decoration: underline;
 }
 .as a{
   color: blue;
 }
+.ave .btn{
+  margin-right: 3px;
+  color: red;
+  background-color: white;
+  border-radius: 14px;
+  border: 3px solid sienna;
+}
+.ave .btn:hover{
+  color: white;
+  background-color: sienna;
+  border-radius: 14px;
+  border: 3px solid sienna;
+}
 .ave small{
-  display: inline;
-  color: blue;
-  margin-left: 1px;
-  margin-right: 17px;
- cursor: pointer;
+  color: blue; cursor: pointer;
  text-align: center;
 }
 .load{

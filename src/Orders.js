@@ -21,15 +21,13 @@ function Orders() {
           
                <div>
                <div class="price">
-          
-          <strong>{reg.id}</strong>
-          </div>
+                    </div>
          
            </div></div>
            
       </td>
-      <td><strong>{reg.Email}</strong></td>
-      <td><strong>{reg.Number}</strong></td>
+      <td><strong>{reg.dataname}</strong></td>
+      <td><strong>{reg.dataemail}</strong></td>
       
     </tr>
     <tr>

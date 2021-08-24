@@ -1,5 +1,4 @@
 import React,{useState,useEffect,useContext, createContext} from 'react';
-import Admin from './Admin';
 import "./App.css"
 import Orders from './Orders';
 import {v4 as uuidv4} from 'uuid';
@@ -19,6 +18,9 @@ const[dataemail,setDataemail]=useState("");
   const [amount,setAmount]=useState("");
   const [promo,setPromo]=useState("");
   const[menu,setMenu]=useState(false);
+  const clickedd=()=>{
+    window.location="/About";
+}
    const [home,setHome]=useState( <div>
    <div className="link">
       {arr.map(i=><div>
@@ -72,14 +74,16 @@ const[dataemail,setDataemail]=useState("");
    gets()
   }, [])
   const getO= async()=>{
+   
     const res= await Axios.get("/employeed").then((response)=>{
       setOrder(response.data);
     })
     if(res && res.data)setOrder(res.data);
    }
- 
+ const[listorder,setListorder]=useState([]);
   const handleorder=async(e)=>{
      e.preventDefault();
+     localStorage.setItem("name",names);
      if(names!==""){
        if(email!==""){
          if(phone!=="" && selected!==""){
@@ -93,6 +97,8 @@ const[dataemail,setDataemail]=useState("");
             promo: promo
          
             }
+            setListorder([...listorder,resq]);
+          localStorage.setItem("orders",JSON.stringify(listorder));
             const res = await Axios.post("/create",resq).then((response)=>{             alert("You have successfully ordered your website we would reach you shortly"); getO()
           })
              if(res)getO()
@@ -130,12 +136,18 @@ const[dataemail,setDataemail]=useState("");
    }
 
 const runalert=()=>{
-  alert("Pricing is unavailable at the moment...")
+ 
+    window.location="./Pricing";
 }  
 const dontshow=()=>{
   localStorage.setItem("dey","applied");
 }  
-   return (
+  const listed = localStorage.getItem("orders")?JSON.parse(localStorage.getItem("orders")):[];
+ const[list,setList]=useState(false);
+ const clicked=()=>{
+   setList(true);
+ }
+  return (
         <div ><div> <div>{!far?<div>         
 <div class="offer">
 <div class="small-container">
@@ -151,8 +163,12 @@ const dontshow=()=>{
 </div>
 </div>
 
-<div className="account-page">{!localStorage.getItem("name")?<div></div>:<div><h1>
-Hello "{localStorage.getItem("name")}",am Shaw from Alpha02 your'e welcome to Didatechnology Community
+<div className="account-page">{!localStorage.getItem("name")?<div>
+<h1>
+Hello, am Shaw from Alpha02 your'e welcome to Didatechnology Community
+</h1>
+</div>:<div><h1>
+Good day "{localStorage.getItem("name")}",am Shaw from Alpha02 your'e welcome to Didatechnology Community
 </h1>
   </div>}
 </div>
@@ -176,7 +192,7 @@ Hello "{localStorage.getItem("name")}",am Shaw from Alpha02 your'e welcome to Di
    </div>
    <div class="col-2" >
     
-   <h1>OTHERS</h1>
+   <h1>ORDER</h1>
    <hr id="Indi"/>
      <div class="form-container">
      <div class="form-btn" >
@@ -257,17 +273,35 @@ Dida would send a  message to your gmail ,else<br/>
  dida would also send a message why your order was invaild.
 </h></div>}  
 </div></div>
+
+</div>
 <div class="ave">
-  <i><small>Terma and Conditions</small></i>
-  <i><small><a onClick={()=>runalert()}>Pricing</a></small></i>
-  <i><small>Meesage</small></i>
-  <i><small>Payment</small></i>
-  <i><small>About</small></i>
-  <i><small>My order</small></i>
+  <i><small class="btn">Terma and Conditions</small></i>
+  <i><small><a onClick={()=>runalert()} class="btn">Pricing</a></small></i>
+  <i><small  class="btn">Meesage</small></i>
+  <i><small  class="btn">Payment</small></i>
+  <i><small  class="btn" onClick={()=>clickedd()}>About</small></i>
+  <i><small  class=""><a className="btn" onClick={()=>clicked()}>My Order</a></small></i>
 
 
 </div>
-</div></div>
+<div class="ave">{list?<div>
+  {listed && listed.map(e=><div>
+   <ul>
+     <li>Id: {e.id}</li>
+     <li>Type: {e.select}</li>
+     <li>Name: {e.name}</li>
+     <li>Email: {e.email}</li>
+     <li>Phone: {e.phone}</li>
+     <li>Description: {e.des}</li>
+     <li>Amount: {e.amount}</li>
+     <li>Promo:{e.promo}</li>
+     </ul>
+    </div>)}
+</div>
+:<div></div>}
+ </div>
+</div>
     :<div><create.Provider value={{order,suscriber}}>
        <Orders />
        </create.Provider></div>}</div>
