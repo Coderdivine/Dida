@@ -3,6 +3,11 @@ import "./App.css"
 import Orders from './Orders';
 import {v4 as uuidv4} from 'uuid';
 import {Axios} from './Contact';
+import {
+  HashRouter  as 
+  Link
+} from 'react-router-dom';
+
  export const create=createContext({});
 
 function Homepage() {
@@ -155,7 +160,7 @@ const dontshow=()=>{
     <div className="col-2">
  <h1>Welcome to Didatech</h1> <br/>
  <hr/><hr/>
-  <i><small><a onClick={()=>runalert()} class="btn">View Pricing </a></small></i>
+  <i><small><a href="/#/Pricing" class="btn">View Pricing </a></small></i>
   
    </div>
   </div>
@@ -277,10 +282,10 @@ Dida would send a  message to your gmail ,else<br/>
 </div>
 <div class="ave">
   <i><small class="btn">Terma and Conditions</small></i>
-  <i><small><a onClick={()=>runalert()} class="btn">Pricing</a></small></i>
+  <i><small><a  class="btn" href="/#/Pricing">Pricing</a></small></i>
   <i><small  class="btn">Meesage</small></i>
   <i><small  class="btn">Payment</small></i>
-  <i><small  class="btn" onClick={()=>clickedd()}>About</small></i>
+  <i><small  class="btn" ><a href="/#/About">About</a></small></i>
   <i><small  class=""><a className="btn" onClick={()=>clicked()}>My Order</a></small></i>
 
 

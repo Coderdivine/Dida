@@ -1,8 +1,12 @@
 import React from 'react'
-
+import {
+    HashRouter  as 
+    Link
+  } from 'react-router-dom';
+  
 function About() {
     const clicked=()=>{
-        window.location="/";
+      <Link to="/About" />
     }
     return (
         <div class="about">
@@ -15,7 +19,7 @@ function About() {
           <div>...</div>
           </div>
           <div>
-              <button class="btn" onClick={()=>clicked()}>Go Back To Star</button>
+              <button class="btn"><a href="/#/">Go Back To Star</a></button>
           </div>
         </div>
     )
