@@ -73,7 +73,7 @@ const[dataemail,setDataemail]=useState("");
   }, [])
   const gets=async()=>{
 
-    const res= await Axios.get('/employee').then((response)=>{
+    const res= await Axios.get('/employeed').then((response)=>{
      setSuscriber(response.data);
     })
     if(res && res.data)setSuscriber(res.data);
@@ -122,7 +122,7 @@ const[dataemail,setDataemail]=useState("");
    }, []);
    const getO= async()=>{
    
-    const res= await Axios.get("/employeed").then((response)=>{
+    const res= await Axios.get("/employee").then((response)=>{
       setOrder(response.data);
     })
     if(res && res.data)setOrder(res.data);
