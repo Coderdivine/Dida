@@ -48,7 +48,7 @@ function Pricing() {
                   <h1>{m.type}</h1><br/>
                   <small><del>{m.before}</del></small><br/>
                   <small><strong>{m.now}</strong></small>
-                      <br/> <button class="btn"><a href="/#/">Order Now</a></button>
+                      <br/> <button class="btn"><a href="/Dida/#/">Order Now</a></button>
               </div>)
           }
         </div>

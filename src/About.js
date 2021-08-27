@@ -19,7 +19,7 @@ function About() {
           <div>...</div>
           </div>
           <div>
-              <button class="btn"><a href="/#/">Go Back To Star</a></button>
+              <button class="btn"><a href="/Dida/#/">Go Back To Star</a></button>
           </div>
         </div>
     )
