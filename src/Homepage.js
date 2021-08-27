@@ -46,17 +46,6 @@ const[dataemail,setDataemail]=useState("");
    const[suscriber,setSuscriber]=useState([]);
   const[data,setData]=useState({});
   const[user,setUser]=useState([]);
-  const gets=async()=>{
-
-    const res= await Axios.get('/employee').then((response)=>{
-     setSuscriber(response.data);
-    })
-    if(res && res.data)setSuscriber(res.data);
-  }
-  const handledata=(e)=>{
-    e.preventDefault();
-    setData({...data,[e.target.id]:e.target.value});
-  }
   const handlesubmit= async(e)=>{
 
    e.preventDefault();
@@ -66,7 +55,11 @@ const[dataemail,setDataemail]=useState("");
      dataemail:dataemail
    }
    if(dataemail!=="" && dataname!==""){
-    const res= await  Axios.post("/created",dataa).then((response)=>{
+    const res= await  Axios.post("/created",dataa).then(()=>{
+      setSuscriber([...suscriber,dataa]);
+
+      alert("Thanks for Suscribing to DidaTech")
+
       gets()
     })
     if(res)gets();setData({});
@@ -78,13 +71,14 @@ const[dataemail,setDataemail]=useState("");
   useEffect(() => {
    gets()
   }, [])
-  const getO= async()=>{
-   
-    const res= await Axios.get("/employeed").then((response)=>{
-      setOrder(response.data);
+  const gets=async()=>{
+
+    const res= await Axios.get('/employee').then((response)=>{
+     setSuscriber(response.data);
     })
-    if(res && res.data)setOrder(res.data);
-   }
+    if(res && res.data)setSuscriber(res.data);
+  };
+ 
  const[listorder,setListorder]=useState([]);
   const handleorder=async(e)=>{
      e.preventDefault();
@@ -104,7 +98,9 @@ const[dataemail,setDataemail]=useState("");
             }
             setListorder([...listorder,resq]);
           localStorage.setItem("orders",JSON.stringify(listorder));
-            const res = await Axios.post("/create",resq).then((response)=>{             alert("You have successfully ordered your website we would reach you shortly"); getO()
+            const res = await Axios.post("/create",resq).then(()=>{ 
+              setOrder([...order,resq]);
+              alert("You have successfully ordered your website we would reach you shortly"); getO()
           })
              if(res)getO()
             
@@ -123,7 +119,14 @@ const[dataemail,setDataemail]=useState("");
   
    useEffect(() => {
     getO()
-   }, [])
+   }, []);
+   const getO= async()=>{
+   
+    const res= await Axios.get("/employeed").then((response)=>{
+      setOrder(response.data);
+    })
+    if(res && res.data)setOrder(res.data);
+   }
    const name="chimdindu";
    const pass="chimdinduasdasd";
    const[far,setFar]=useState(false);
