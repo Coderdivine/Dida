@@ -8,7 +8,43 @@
 justify-content: center;
   text-align:center;
 }
+.avee {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+position: relative;
+margin: auto;
+justify-content: center;
+align-items: center;
+text-align:center;
+border-radius: 15px;
+margin-top:7%;
+margin-bottom: 10%;
+padding: 10px 10px ;
+ border: 2px solid sienna;
+ 
 
+}
+.avee ul {
+margin: auto;
+text-align: left;
+border:2px solid silver;
+margin-bottom: 9px;
+}
+.avee ul li{
+color: red;
+text-decoration: sienna;
+margin-top: 4px;
+margin-bottom: 6px;
+
+}
+.avee h1{
+color: red;
+margin-top: 4px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+margin-bottom: 6px;
+text-decoration: none;
+
+}
 .ave {
     display: inline-block;
   text-decoration:underline;
@@ -53,7 +89,7 @@ justify-content: center;
 .about{
   justify-content: center;
   text-align: center;
- margin-top: 36%;
+ margin-top: 10%;
  color: sienna; 
  margin-bottom: 16px;
 }
@@ -68,9 +104,9 @@ justify-content: center;
   text-align: center;
   color: sienna; 
   border: 2px solid sienna;
-  width: 150px;
-  height: 150px;
-  border-radius: 75px;
+  width: 200px;
+  height: 190px;
+  border-radius: 100px;
 }
 header{
   text-align: center;
@@ -97,8 +133,38 @@ header{
   margin-bottom: 6px;
 
 }
+.avee del{
+  color: burlywood;
+  text-decoration: line-through;
+  margin-top: 4px;
+  margin-bottom: 6px;
 
+}
+.avee strong{
+  color: sienna;
+  text-decoration: silver;
+  margin-top: 4px;
+  margin-bottom: 6px;
 
+}
+
+.avee .btn{
+  margin-right: 3px;
+  color: red;
+  background-color: white;
+  border-radius: 14px;
+  border: 3px solid sienna;
+}
+.avee .btn:hover{
+  color: white;
+  background-color: sienna;
+  border-radius: 14px;
+  border: 3px solid sienna;
+}
+.avee small{
+  color: blue; cursor: pointer;
+ text-align: center;
+}
 .as{
   text-decoration: underline;
 }
@@ -298,14 +364,32 @@ header{
 }
 .link h1{
   font-size:18px;
-   margin-top:8px ;
+   margin-top:28px ;
    text-align: center;
    color: red;
 }
 .App-logo img{
    border-radius: 30px;
 }
-
+.linked {
+  justify-content: center;
+  height: 30px;
+  width: 80%;
+  align-items: center;
+  border: 1px  solid white;
+  margin-left: 12px;
+}
+.linked:hover{
+  justify-content: center;
+  height: 30px;
+  width: 60%;
+  align-items: center;
+  border: 2px  solid red;
+  border-radius: 15px;
+  margin-left: 12px;
+  text-align: center;
+  border-top: 1px solid white;
+}
 .App-header {
   background-color: white;
   min-height: 100vh;
@@ -1007,7 +1091,22 @@ line-height:32px;
 .form-input{
   height: 10px;
 }
+.avee {
+  display:grid;
+  grid-template-columns: 1fr ;
+position: relative;
+margin: auto;
+justify-content: center;
+align-items: center;
+text-align:center;
+border-radius: 15px;
+margin-top:7%;
+margin-bottom: 10%;
+padding: 10px 10px ;
+ border: 2px solid sienna;
+ 
 
+}
 }
 @media only screen and (max-width:800px){
  
@@ -1023,6 +1122,22 @@ line-height:32px;
     
     
    } 
+   .avee {
+    display:grid;
+    grid-template-columns: 1fr ;
+  position: relative;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+  border-radius: 15px;
+  margin-top:7%;
+  margin-bottom: 10%;
+  padding: 10px 10px ;
+   border: 2px solid sienna;
+   
+  
+  }
   }
 
 @keyframes App-logo-spin {

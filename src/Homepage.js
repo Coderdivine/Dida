@@ -12,7 +12,7 @@ import {
 
 function Homepage() {
     const arr=[
-   {src:"./img/paper1.jpg",name:"DivereFood",link:"https://Coderdivine.github.io/divere"}
+   {src:"./img/diverefoodlogo.png",name:"DivereFood",link:"https://Coderdivine.github.io/divere"}
    ]
 const[dataname,setDataname]=useState("");
 const[dataemail,setDataemail]=useState("");
@@ -23,15 +23,13 @@ const[dataemail,setDataemail]=useState("");
   const [amount,setAmount]=useState("");
   const [promo,setPromo]=useState("");
   const[menu,setMenu]=useState(false);
-  const clickedd=()=>{
-    window.location="/About";
-}
+  
    const [home,setHome]=useState( <div>
    <div className="link">
       {arr.map(i=><div>
        <a href={i.link}><div className="App">
          <div className="App-logo">
-           <img src={i.src} alt={i.name} width="45px" height="45px" />
+           <img src={i.src} alt={i.name} width="59px" height="59px" /><br/>
            </div></div></a>
          <h1>{i.name}</h1>
       </div>)}
@@ -96,10 +94,11 @@ const[dataemail,setDataemail]=useState("");
             promo: promo
          
             }
-            setListorder([...listorder,resq]);
-          localStorage.setItem("orders",JSON.stringify(listorder));
-            const res = await Axios.post("/create",resq).then(()=>{ 
+               const res = await Axios.post("/create",resq).then(()=>{ 
               setOrder([...order,resq]);
+              setListorder([...listorder,resq]);
+              localStorage.setItem("orders",JSON.stringify(listorder));
+            
               alert("You have successfully ordered your website we would reach you shortly"); getO()
           })
              if(res)getO()
@@ -131,6 +130,7 @@ const[dataemail,setDataemail]=useState("");
    const pass="chimdinduasdasd";
    const[far,setFar]=useState(false);
    const[faq,setFaq]=useState(false);
+   const[faqq,setFaqq]=useState(false);
    const[namee,setNamee]=useState("");
    const[passs,setPasss]=useState("");
    const handleit=(e)=>{
@@ -143,10 +143,7 @@ const[dataemail,setDataemail]=useState("");
      }
    }
 
-const runalert=()=>{
  
-    window.location="./Pricing";
-}  
 const dontshow=()=>{
   localStorage.setItem("dey","applied");
 }  
@@ -182,16 +179,7 @@ Good day "{localStorage.getItem("name")}",am Shaw from Alpha02 your'e welcome to
 </div>
 <hr/>
 <br/>
-      <div class="col-2">
-       
-
-     <h1> Sites on DidaTech</h1>
-     <hr id="Indi"/></div>
-     {home}   
-
- 
- 
-  <br/>
+     
   <div class="s">
   <div class="container">
   <div class="row">
@@ -207,7 +195,7 @@ Good day "{localStorage.getItem("name")}",am Shaw from Alpha02 your'e welcome to
     
      </div>
      <i><small>You Can Order Any Site You Want Form Here<br/>
-     Please Fill In The Requried Felid...
+     Please Fill In The Required Felid...
      </small></i>
      
      
@@ -219,7 +207,7 @@ Good day "{localStorage.getItem("name")}",am Shaw from Alpha02 your'e welcome to
               const selectedfood=e.target.value;
               setSelected(selectedfood);}}>
              <option value="Bet App">Bet App</option>
-             <option vaiue="E-commerece" >E-commerece</option>
+             <option vaiue="E-commerce" >E-commerce</option>
              <option value="Sponzy" >Sponzy</option>
              <option value="Vlog">Vlog</option>
              <option vaiue="Blog" >Blog</option>
@@ -258,7 +246,29 @@ Good day "{localStorage.getItem("name")}",am Shaw from Alpha02 your'e welcome to
  <button type="submit" class="btn">Suscribe</button>
   </form>
 </div>
-</div></div>  <div class="col-4-5"><h1><span  onClick={(e)=>setFaq(true)}>FAQ's</span></h1><br/>
+</div></div>
+<div class="col-4-5">
+  <h1><span onClick={(e)=>setFaqq(true)}>TYPE OF WEBSITES </span></h1><br/>
+  <div>{faqq?<div><head>type of websites</head>
+  <p> <h>E-commerce:</h> <br/>E-commerce is an electronic business use to exchange goods and services by means of the internet or other computer network.
+<br/><h>E-service:</h><br/> Electronic service use to provide services e.g E-banking,Trading Websites,Refferal,Encrypted chat.
+<br/><h>Bet Service:</h><br/> Use for betting online.e.g football,basketball,most sport,colors  and games e.t.c.
+<br/><h>Blog:</h> <br/>A static or dynamic personnal journal,or can be defined as frequently updated journal chroniching links at a website,intended for public viewing.
+<br/><h>Vlog:</h><br/> A static or dynamic personnal journal video,or can be defined as frequently updated journal video chroniching links at a website,intended for public viewing.
+<br/><h>Downloads:</h><br/> allows user to access a file,pdf,image online to download it on their devices locally.
+<br/><h>Sponzy Websites:</h><br/> A website known as "scam",it used to exchange money to different people in other to get a huge return e.g  if 100 users pay CAD100 75% would get paid while the remaining will lose their money .Individuals who have sites like sponzy  sometimes refuse to pay any user which will result to scam,
+<br/><h>E-learning:</h><br/> This means learning with the means of electronic technologies such as computer and internet in conjunction with other media.</p>
+  <br/><hr/>
+  <head>Static and Dynamic Websites</head><br/>
+  <p>Statis website do not have a backend or don not undergo any changes for a long period.<br/>
+  Dynamic website is a website that has a  backend for getting and sending data or information to a database which happens frequently depending on the type of website.
+  <br/>
+  Static website if preferable for personal Blog, Vlog, Downloads e.t.c. 
+  </p></div>:<div></div>}
+    
+  </div>
+
+  </div>  <div class="col-4-5"><h1><span  onClick={(e)=>setFaq(true)}>FAQ's</span></h1><br/>
     <div> {!faq ?<div></div>:<div> 
       <br/>
        <h>How to Order Website form Dida ?<br/>
@@ -273,21 +283,20 @@ Step 4: Select the type of Website you want.
 <br/>
 Why Should you Suscribe ?<br/>
   The reason why Didatech  made it possible for customer to suscribe
-is to ensure that customers get updataed <br/>with the latest information on Didatech.<br/>
+is to ensure that customers get updated <br/>with the latest information on Didatech.<br/>
 Have not seen my orders ?<br/>
-Dida team takes 20-30mins to verify your order<br/>
-your orders if verified to the terms and conditions,
-Dida would send a  message to your gmail ,else<br/>
- dida would also send a message why your order was invaild.
+Dida team takes 20 to 30mins to verify your order.<br/>
+If your order is verified to the terms and conditions,
+Dida would send a  message to your Gmail, else<br/>
+ dida will send a message why your order was invaild.
 </h></div>}  
 </div></div>
 
 </div>
 <div class="ave">
-  <i><small class="btn">Terma and Conditions</small></i>
   <i><small><a  class="btn" href="/Dida/#/Pricing">Pricing</a></small></i>
-  <i><small  class="btn">Meesage</small></i>
-  <i><small  class="btn">Payment</small></i>
+  <i><small  class="btn"><a href="https://Coderdivine.github.io/message">Meesage</a></small></i>
+  <i><small  class="btn"><a href="https://Coderdivine.github.io/payment">Payment</a></small></i>
   <i><small  class="btn" ><a href="/Dida/#/About">About</a></small></i>
   <i><small  class=""><a className="btn" onClick={()=>clicked()}>My Order</a></small></i>
 
@@ -296,7 +305,7 @@ Dida would send a  message to your gmail ,else<br/>
 <div class="ave">{list?<div>
   {listed && listed.map(e=><div>
    <ul>
-     <li>Id: {e.id}</li>
+     <li>Id: {e.ide}</li>
      <li>Type: {e.select}</li>
      <li>Name: {e.name}</li>
      <li>Email: {e.email}</li>
@@ -313,7 +322,17 @@ Dida would send a  message to your gmail ,else<br/>
     :<div><create.Provider value={{order,suscriber}}>
        <Orders />
        </create.Provider></div>}</div>
-     <div className="footer">
+       <div class="col-2">
+       
+
+       <h1> Sites on DidaTech</h1>
+      <hr id="Indi"/></div>
+      {home}   
+ 
+  
+  
+   <br/>
+    <div className="footer">
 <div className="container">
 <div className="row">
 <div className="footer-col-2">
@@ -330,8 +349,11 @@ Dida would send a  message to your gmail ,else<br/>
 <h3>Follow Us</h3>
 <ul>
 
-<li><a >YouTube</a></li>
 
+<li><a href="#">YouTube</a></li>
+<li><a href=" //https://www.instagram.com/_chimdi.xo_/">Instagram</a></li>
+<li><a href="//https://web.facebook.com/divine.ezechukwu/">Facebook</a></li>
+<li><a href="#">Twitter</a></li>
 </ul>
 </div>
 <div className="admin-input">
@@ -347,8 +369,9 @@ Dida would send a  message to your gmail ,else<br/>
 <div></div></div>
  
  </div>
+
         </div>
-    )
+    );
 }
 
 export default Homepage;
