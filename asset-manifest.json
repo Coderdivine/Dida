@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/Dida/static/css/main.d83bd14d.chunk.css",
-    "main.js": "/Dida/static/js/main.ee51e9f7.chunk.js",
-    "main.js.map": "/Dida/static/js/main.ee51e9f7.chunk.js.map",
+    "main.css": "/Dida/static/css/main.2b05eec3.chunk.css",
+    "main.js": "/Dida/static/js/main.d3946474.chunk.js",
+    "main.js.map": "/Dida/static/js/main.d3946474.chunk.js.map",
     "runtime-main.js": "/Dida/static/js/runtime-main.e8da2db9.js",
     "runtime-main.js.map": "/Dida/static/js/runtime-main.e8da2db9.js.map",
     "static/js/2.ec8531a0.chunk.js": "/Dida/static/js/2.ec8531a0.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.7682f807.chunk.js": "/Dida/static/js/3.7682f807.chunk.js",
     "static/js/3.7682f807.chunk.js.map": "/Dida/static/js/3.7682f807.chunk.js.map",
     "index.html": "/Dida/index.html",
-    "static/css/main.d83bd14d.chunk.css.map": "/Dida/static/css/main.d83bd14d.chunk.css.map",
+    "static/css/main.2b05eec3.chunk.css.map": "/Dida/static/css/main.2b05eec3.chunk.css.map",
     "static/js/2.ec8531a0.chunk.js.LICENSE.txt": "/Dida/static/js/2.ec8531a0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.e8da2db9.js",
     "static/js/2.ec8531a0.chunk.js",
-    "static/css/main.d83bd14d.chunk.css",
-    "static/js/main.ee51e9f7.chunk.js"
+    "static/css/main.2b05eec3.chunk.css",
+    "static/js/main.d3946474.chunk.js"
   ]
 }
