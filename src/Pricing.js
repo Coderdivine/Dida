@@ -62,7 +62,7 @@ function Pricing() {
    
     return (
         <div>
-            <header>Pricing for all websites avaliable on Didatech.</header>
+            <header>Pricing for all websites available on Didatech.</header>
         <div class="avee">
           {Pricinglist &&
               Pricinglist.map(m=><div>

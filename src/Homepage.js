@@ -60,7 +60,7 @@ const[dataemail,setDataemail]=useState("");
 
       gets()
     })
-    if(res)gets();setData({});
+    if(res)gets();
     
      
     };
@@ -74,7 +74,7 @@ const[dataemail,setDataemail]=useState("");
     const res= await Axios.get('/employeed').then((response)=>{
      setSuscriber(response.data);
     })
-    if(res && res.data)setSuscriber(res.data);
+    if(res)console.log("success")
   };
  
  const[listorder,setListorder]=useState([]);
@@ -97,10 +97,11 @@ const[dataemail,setDataemail]=useState("");
                const res = await Axios.post("/create",resq).then(()=>{ 
               setOrder([...order,resq]);
               setListorder([...listorder,resq]);
+              alert("You have successfully ordered your website we would reach you shortly"); getO()
+
               localStorage.setItem("orders",JSON.stringify(listorder));
             
-              alert("You have successfully ordered your website we would reach you shortly"); getO()
-          })
+          });
              if(res)getO()
             
          }else{
@@ -116,15 +117,13 @@ const[dataemail,setDataemail]=useState("");
  
   }
   
-   useEffect(() => {
-    getO()
-   }, []);
+  
    const getO= async()=>{
    
     const res= await Axios.get("/employee").then((response)=>{
       setOrder(response.data);
     })
-    if(res && res.data)setOrder(res.data);
+    if(res )console.log("success")
    }
    const name="chimdindu";
    const pass="chimdinduasdasd";
@@ -142,7 +141,9 @@ const[dataemail,setDataemail]=useState("");
        }
      }
    }
-
+   useEffect(() => {
+    getO()
+   }, []);
  
 const dontshow=()=>{
   localStorage.setItem("dey","applied");
@@ -260,10 +261,10 @@ Good day "{localStorage.getItem("name")}",am Shaw from Alpha02 your'e welcome to
 <br/><h>E-learning:</h><br/> This means learning with the means of electronic technologies such as computer and internet in conjunction with other media.</p>
   <br/><hr/>
   <head>Static and Dynamic Websites</head><br/>
-  <p>Statis website do not have a backend or don not undergo any changes for a long period.<br/>
+  <p>Static website do not have a backend or don not undergo any changes for a long period.<br/>
   Dynamic website is a website that has a  backend for getting and sending data or information to a database which happens frequently depending on the type of website.
   <br/>
-  Static website if preferable for personal Blog, Vlog, Downloads e.t.c. 
+  Static website if preferrable for personal Blog, Vlog, Downloads e.t.c. 
   </p></div>:<div></div>}
     
   </div>
