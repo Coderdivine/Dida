@@ -3,10 +3,7 @@ import "./App.css"
 import Orders from './Orders';
 import {v4 as uuidv4} from 'uuid';
 import {Axios} from './Contact';
-import {
-  HashRouter  as 
-  Link
-} from 'react-router-dom';
+
 
  export const create=createContext({});
 
@@ -83,7 +80,7 @@ const[dataemail,setDataemail]=useState("");
      localStorage.setItem("name",names);
      if(names!==""){
        if(email!==""){
-         if(phone!=="" && selected!==""){
+         
           const   resq={ide:uuidv4(),
             select:selected,
             name: names,
@@ -96,17 +93,15 @@ const[dataemail,setDataemail]=useState("");
             }
                const res = await Axios.post("/create",resq).then(()=>{ 
               setOrder([...order,resq]);
-              setListorder([...listorder,resq]);
               alert("You have successfully ordered your website we would reach you shortly"); getO()
 
+              setListorder([...listorder,resq]);
               localStorage.setItem("orders",JSON.stringify(listorder));
             
           });
              if(res)getO()
             
-         }else{
-           alert("phone number and type of website is must")
-         }
+         
        } else{
          alert("Please enter your email")
        }
@@ -352,8 +347,8 @@ Dida would send a  message to your Gmail, else<br/>
 
 
 <li><a href="#">YouTube</a></li>
-<li><a href=" //https://www.instagram.com/_chimdi.xo_/">Instagram</a></li>
-<li><a href="//https://web.facebook.com/divine.ezechukwu/">Facebook</a></li>
+<li><a href="https://www.instagram.com/_chimdi.xo_/">Instagram</a></li>
+<li><a href="https://web.facebook.com/divine.ezechukwu/">Facebook</a></li>
 <li><a href="#">Twitter</a></li>
 </ul>
 </div>
