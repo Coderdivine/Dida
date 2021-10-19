@@ -16,8 +16,8 @@ function About() {
           {!more?<div>...</div>:<div>
             <h1>Contact Us</h1>
             <ul>
-            <li><a href=" //https://www.instagram.com/_chimdi.xo_/">Instagram</a></li>
-            <li><a href="//https://web.facebook.com/divine.ezechukwu/">Facebook</a></li>
+            <li><a href=" https://www.instagram.com/_chimdi.xo_/">Instagram</a></li>
+            <li><a href="https://web.facebook.com/divine.ezechukwu/">Facebook</a></li>
 
 
             </ul>
