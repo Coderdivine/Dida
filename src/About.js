@@ -13,10 +13,10 @@ function About() {
           <small><i>Version 2.95</i></small><br/><br/><br/><hr/>
           <div className="ave">
               <button class="btn" onClick={formore}>More Info</button>
-          {!more?<div>...</div>:<div>
+          {!more?<div>....</div>:<div>
             <h1>Contact Us</h1>
             <ul>
-            <li><a href=" https://www.instagram.com/_chimdi.xo_/">Instagram</a></li>
+            <li><a href="https://www.instagram.com/_chimdi.xo_/">Instagram</a></li>
             <li><a href="https://web.facebook.com/divine.ezechukwu/">Facebook</a></li>
 
 
