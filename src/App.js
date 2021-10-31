@@ -1,4 +1,3 @@
-import react from 'react';
 import About from './About';
 import './App.css';
 import Homepage from "./Homepage";
@@ -6,8 +5,7 @@ import Pricing from './Pricing';
 import {
   HashRouter  as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from 'react-router-dom';
 
 function App() {

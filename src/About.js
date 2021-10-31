@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState} from 'react'
 
 function About() {
     const[more,setMore]=useState(false);
@@ -8,7 +8,7 @@ function About() {
     return (
         <div class="about">
           <h1>Shaw</h1>  <br/>
-          <img src="./img/didalogo.png"/><br/>
+          <img src="./img/didalogo.png" alt="hello"/><br/>
           <small><strong>Mama's Boy</strong></small><br/>
           <small><i>Version 2.95</i></small><br/><br/><br/><hr/>
           <div className="ave">

@@ -5,7 +5,7 @@ function Orders() {
 const[searchitem,setSearchitem]=useState("");
   const{order,suscriber}=useContext(create);
     const orderss= order && order.filter((lists)=>{
-      if(searchitem==""){return lists}else if(lists.name.toLowerCase().includes(searchitem.toLowerCase())){return lists}
+      if(searchitem===""){return lists}else if(lists.name.toLowerCase().includes(searchitem.toLowerCase())){return lists}
     }).map(order=><div class="order">
     <td><small>{order.select}</small></td>
     <div class="names"><small><td>{order.name}</td>

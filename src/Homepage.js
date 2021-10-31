@@ -1,4 +1,4 @@
-import React,{useState,useEffect,useContext, createContext} from 'react';
+import React,{useState,useEffect, createContext} from 'react';
 import "./App.css"
 import Orders from './Orders';
 import {v4 as uuidv4} from 'uuid';
@@ -16,12 +16,12 @@ const[dataemail,setDataemail]=useState("");
    const [names,setNames]=useState("");
    const [email,setEmail]=useState("");
    const [phone,setPhone]=useState("");
-  const [des,setDes]=useState("") 
+  const [des,setDes]=useState("") ;
   const [amount,setAmount]=useState("");
   const [promo,setPromo]=useState("");
-  const[menu,setMenu]=useState(false);
+
   
-   const [home,setHome]=useState( <div>
+   const [home]=useState( <div>
    <div className="link">
       {arr.map(i=><div>
        <a href={i.link}><div className="App">
@@ -32,15 +32,11 @@ const[dataemail,setDataemail]=useState("");
       </div>)}
    </div></div>);
    const[selected,setSelected]=useState("");
-   const handleselect=(e)=>{
-       e.preventDefault();
-       setSelected(e.target.value);
-   }
+  
    const[order,setOrder]=useState([]);
 
    const[suscriber,setSuscriber]=useState([]);
-  const[data,setData]=useState({});
-  const[user,setUser]=useState([]);
+  
   const handlesubmit= async(e)=>{
 
    e.preventDefault();
@@ -78,10 +74,11 @@ const[dataemail,setDataemail]=useState("");
   const handleorder=async(e)=>{
      e.preventDefault();
      localStorage.setItem("name",names);
-     if(names!==""){
-       if(email!==""){
+     if(names !== ""){
+       
          
-          const   resq={ide:uuidv4(),
+          const resq ={
+            ide:uuidv4(),
             select:selected,
             name: names,
             email:email,
@@ -91,21 +88,17 @@ const[dataemail,setDataemail]=useState("");
             promo: promo
          
             }
-               const res = await Axios.post("/create",resq).then(()=>{ 
-              setOrder([...order,resq]);
-              alert("You have successfully ordered your website we would reach you shortly"); getO()
-
-              setListorder([...listorder,resq]);
-              localStorage.setItem("orders",JSON.stringify(listorder));
-            
-          });
-             if(res)getO()
-            
-         
-       } else{
-         alert("Please enter your email")
-       }
-         }else{
+            const res = await Axios.post("/create",resq).then(()=>{ 
+            setOrder([...order,resq]);
+            alert("You have successfully ordered your website we would reach you shortly");
+            getO()
+            setListorder([...listorder,resq]);
+            localStorage.setItem("orders",JSON.stringify(listorder));
+             });
+        
+             }
+              
+         else{
            alert("We need your name to start your verification")
          }
        
@@ -196,9 +189,12 @@ Good day "{localStorage.getItem("name")}",am Shaw from Alpha02 your'e welcome to
      
      
      <form onSubmit={(e)=>handleorder(e)} id="Regform">
-           <input id="name" value={names}  onChange={(e)=>setNames(e.target.value)}   placeholder="Name"/>
-          <input id="email" value={email}   placeholder="Email" onChange={(e)=>setEmail(e.target.value)}/>
-           <input id="phone" value={phone}   placeholder="Phone"onChange={(e)=>setPhone(e.target.value)} />
+    
+           <input id="name" value={names}  placeholder="Name" name="name" onChange={(e)=>setNames(e.target.value)}  required/>
+           
+          <input id="email" value={email}   placeholder="Email" name="email" onChange={(e)=>setEmail(e.target.value)} required/>
+          
+           <input id="phone" value={phone}   placeholder="Phone" name="phone" onChange={(e)=>setPhone(e.target.value)} required/>
            <select value={selected} onChange={(e)=>{
               const selectedfood=e.target.value;
               setSelected(selectedfood);}}>
@@ -210,11 +206,14 @@ Good day "{localStorage.getItem("name")}",am Shaw from Alpha02 your'e welcome to
              <option value="Downloading" >Downloading</option>
              <option value="Others">Others</option>
              </select>
-           <textarea  row={5} value={des}  placeholder="Description" onChange={(e)=>setDes(e.target.value)}/>
-           <input id="amount" value={amount} placeholder="Amount" onChange={(e)=>setAmount(e.target.value)}/>
+            
+           <textarea  row={5} value={des}  placeholder="Description" name="des" onChange={(e)=>setDes(e.target.value)} required/>
+           
+           <input id="amount" value={amount} placeholder="Amount"  name="amount" onChange={(e)=>setAmount(e.target.value)} required/>
            <br/>
-           <small>Optional</small>
-           <input id="promo" placeholder="Enter Promo Code" onChange={(e)=>setPromo(e.target.value)}/>
+           <small>Optional</small><br/>
+           
+           <input id="promo" placeholder="Enter Promo Code" name="promo" onChange={(e)=>setPromo(e.target.value)} />
          <br/>
          {
 !localStorage.getItem("dey")?<div class="as">
