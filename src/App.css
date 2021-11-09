@@ -1,5 +1,9 @@
 
-
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
   small{
    color:#555;
   }
@@ -242,38 +246,11 @@ header{
     animation: App-logo-spin infinite 20s linear;
   }
 }
-.testimonial{
-  padding:100px;
-  }
-  .testimonial .col-3{
-  text-align: center;
-  padding:40px 20px;
-  box-shadow:0 0 20px 0 rgba(0,0,0,0.1);
-  cursor: pointer;
-  transition: transform 0.5s;
-  }
-  .testimonial .col-3 img{
-   width:50px;
-   margin-top:20px;
-   border-radius:50px;
-  }
-  .testimonial .col-3:hover{
-     transform:translateY(-10px);
-  }
-
-
-
-  .terms{
+.terms{
     text-decoration: underline;
     color: blue;
   }
-  
-    
-     
-      
-  
-  
-  nav{
+ nav{
   flex:1;
   text-align:right;
  
@@ -296,7 +273,7 @@ header{
     margin-right:20px;
     color: white;
     }
-    .header{
+ .header{
       background:rgba(255, 0, 0, 0.932);
       background-color: radial-gradient() rgb(brown,red,white);
       border-radius: 8px;
@@ -334,6 +311,11 @@ header{
   justify-content: space-around;
   
   }
+  .no-fill{
+    font-style: italic;
+    color: transparent;
+    -webkit-text-stroke: 3px rgba(228, 14, 14, 0.494);
+}
   .col-2{
   flex-basis:50%;
   min-width:300px;

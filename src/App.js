@@ -3,7 +3,7 @@ import './App.css';
 import Homepage from "./Homepage";
 import Pricing from './Pricing';
 import {
-  HashRouter  as Router,
+BrowserRouter  as Router,
   Switch,
   Route
 } from 'react-router-dom';

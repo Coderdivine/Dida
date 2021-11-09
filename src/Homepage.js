@@ -76,10 +76,10 @@ const[dataemail,setDataemail]=useState("");
      localStorage.setItem("name",names);
      if(names !== ""){
        
-         
+      //selected,name,email,phone,des,amount,promo,ide   
           const resq ={
             ide:uuidv4(),
-            select:selected,
+            selected:selected,
             name: names,
             email:email,
             phone:phone,
@@ -146,8 +146,8 @@ const dontshow=()=>{
 <div class="offer">
 <div class="small-container">
   <div class="row">
-    <div className="col-2">
- <h1>Welcome to Didatech</h1> <br/>
+    <div className="col-2"><div className="no-fill">
+ <h1>Welcome to Didatech</h1></div> <br/>
  <hr/><hr/>
   <i><small><a href="/Dida/#/Pricing" class="btn">View Pricing </a></small></i>
   
@@ -189,11 +189,8 @@ Good day "{localStorage.getItem("name")}",am Shaw from Alpha02 your'e welcome to
      
      
      <form onSubmit={(e)=>handleorder(e)} id="Regform">
-    
            <input id="name" value={names}  placeholder="Name" name="name" onChange={(e)=>setNames(e.target.value)}  required/>
-           
           <input id="email" value={email}   placeholder="Email" name="email" onChange={(e)=>setEmail(e.target.value)} required/>
-          
            <input id="phone" value={phone}   placeholder="Phone" name="phone" onChange={(e)=>setPhone(e.target.value)} required/>
            <select value={selected} onChange={(e)=>{
               const selectedfood=e.target.value;
@@ -208,9 +205,9 @@ Good day "{localStorage.getItem("name")}",am Shaw from Alpha02 your'e welcome to
              </select>
             
            <textarea  row={5} value={des}  placeholder="Description" name="des" onChange={(e)=>setDes(e.target.value)} required/>
-           
-           <input id="amount" value={amount} placeholder="Amount"  name="amount" onChange={(e)=>setAmount(e.target.value)} required/>
+           <input id="amount" value={amount} placeholder="Estimated amount"  name="amount" onChange={(e)=>setAmount(e.target.value)} required/>
            <br/>
+           <label>Enter promo code::</label><br/>
            <small>Optional</small><br/>
            
            <input id="promo" placeholder="Enter Promo Code" name="promo" onChange={(e)=>setPromo(e.target.value)} />
@@ -222,7 +219,7 @@ Good day "{localStorage.getItem("name")}",am Shaw from Alpha02 your'e welcome to
   
   }
          
-           <button type="submit" class="btn">Send</button>
+           <button type="submit" class="btn">Send Request</button>
          </form>
      </div>
      </div>
@@ -236,6 +233,7 @@ Good day "{localStorage.getItem("name")}",am Shaw from Alpha02 your'e welcome to
 <br/>
   <form onSubmit={(e)=>handlesubmit(e)}>
     <input id="Number" type="phone" placeholder="Phone Number" onChange={(e)=>setDataname(e.target.value)}/>
+  
     <input id="Email" type="email" placeholder="Email" onChange={(e)=>setDataemail(e.target.value)}/><br/>
     <small><i>Please make sure you don't use auto fill to prevent loss of data</i></small>
  <button type="submit" class="btn">Suscribe</button>
