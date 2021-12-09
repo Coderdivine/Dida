@@ -19,12 +19,11 @@
     "uuidv4": "^6.2.11",
     "web-vitals": "^1.1.2"
   },
+
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "json-server --watch db.json ",
+    "test": "npm run build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

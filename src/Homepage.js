@@ -36,9 +36,20 @@ const[dataemail,setDataemail]=useState("");
    const[order,setOrder]=useState([]);
 
    const[suscriber,setSuscriber]=useState([]);
+   const gets=async()=>{
+      await Axios.get('/employeed').then((response)=>{
+     setSuscriber(response.data);
+     console.log("success")
+    })
+  };
+  const getO= async()=>{
+    await Axios.get("/employee").then((response)=>{
+      setOrder(response.data);
+      console.log("success")
+    })
+   }
   
   const handlesubmit= async(e)=>{
-
    e.preventDefault();
    const dataa={
      id:uuidv4(),
@@ -46,37 +57,26 @@ const[dataemail,setDataemail]=useState("");
      dataemail:dataemail
    }
    if(dataemail!=="" && dataname!==""){
-    const res= await  Axios.post("/created",dataa).then(()=>{
+   await  Axios.post("/created",dataa).then(()=>{
       setSuscriber([...suscriber,dataa]);
 
       alert("Thanks for Suscribing to DidaTech")
 
       gets()
     })
-    if(res)gets();
-    
-     
     };
    }
   
   useEffect(() => {
    gets()
   }, [])
-  const gets=async()=>{
-
-    const res= await Axios.get('/employeed').then((response)=>{
-     setSuscriber(response.data);
-    })
-    if(res)console.log("success")
-  };
+  
  
  const[listorder,setListorder]=useState([]);
   const handleorder=async(e)=>{
      e.preventDefault();
      localStorage.setItem("name",names);
      if(names !== ""){
-       
-      //selected,name,email,phone,des,amount,promo,ide   
           const resq ={
             ide:uuidv4(),
             selected:selected,
@@ -88,7 +88,7 @@ const[dataemail,setDataemail]=useState("");
             promo: promo
          
             }
-            const res = await Axios.post("/create",resq).then(()=>{ 
+        await Axios.post("/create",resq).then(()=>{ 
             setOrder([...order,resq]);
             alert("You have successfully ordered your website we would reach you shortly");
             getO()
@@ -103,16 +103,7 @@ const[dataemail,setDataemail]=useState("");
          }
        
  
-  }
-  
-  
-   const getO= async()=>{
-   
-    const res= await Axios.get("/employee").then((response)=>{
-      setOrder(response.data);
-    })
-    if(res )console.log("success")
-   }
+  };
    const name="chimdindu";
    const pass="chimdinduasdasd";
    const[far,setFar]=useState(false);
@@ -134,7 +125,6 @@ const[dataemail,setDataemail]=useState("");
    }, []);
  
 const dontshow=()=>{
-  localStorage.setItem("dey","applied");
 }  
   const listed = localStorage.getItem("orders")?JSON.parse(localStorage.getItem("orders")):[];
  const[list,setList]=useState(false);
